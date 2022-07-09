@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
 {% block title %}NextTest Viewer{% endblock %}
 {% block content %}
-<h1>A simplistic take on test viewing.</h1>
-<hr>
+    <h1>A simplistic take on test viewing.</h1>
+    <hr>
 
-Available routes:
-<ul>
-    {% for route in all_routes %}
-        <li>
-        <a href="{{ route.0 }}">
-            {{ route.0 }} {% if route.1 %}- {{ route.1 }}{% endif %}
-        </a>
-        </li>
-    {% endfor %}
+    {% if name %}
+        Available routes for <b>{{ name }}</b>:
+    {% else %}
+        Available routes:
+    {% endif %}
+    <ul>
+        {% for route in all_routes %}
+            <li>
+                <a href="{{ route.0 }}">
+                    {{ route.0 }}
+                </a> {% if route.1 %}- {{ route.1 }}{% endif %}
+            </li>
+        {% endfor %}
 
-</ul>
+    </ul>
 {% endblock %}

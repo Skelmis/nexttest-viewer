@@ -16,6 +16,10 @@ class Entry(models.Model):
     test_file = models.URLField(help_text="A link to the actual test cases.")
     created_at = models.DateTimeField(auto_now_add=True)
     last_edited_at = models.DateTimeField(auto_now=True)
+    reference_link = models.URLField(
+        help_text="An optional link to what this aims to test. I.e. Pr's",
+        blank=True,
+    )
 
     def save(self, *args, **kwargs):
         if not self.slug:
