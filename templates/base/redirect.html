@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NextTest Viewer</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}NextTest Viewer{% endblock %}
+{% block content %}
 <h1>A simplistic take on test viewing.</h1>
 <hr>
 
@@ -12,12 +8,11 @@ Available routes:
 <ul>
     {% for route in all_routes %}
         <li>
-        <a href="?q={{ route }}">
+        <a href="{{ route }}">
             {{ route }}
         </a>
         </li>
     {% endfor %}
 
 </ul>
-</body>
-</html>
+{% endblock %}

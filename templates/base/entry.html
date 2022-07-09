@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}NextTest - {{ entry.repo.slug }}/{{ entry.slug }}{% endblock %}
+{% block content %}
+<h1>Currently viewing tests for {{ entry.repo.slug }}/{{ entry.slug }}</h1>
+<hr>
+    {% if entry.description %}
+        <p>{{ entry.description }}</p>
+    {% endif %}
+    Find the test cases <a href="{{ entry.test_file }}" target="_blank">here</a>
+
+<iframe height="800vh" width="100%" src="{{ entry.log_file.url }}">
+</iframe>
+    <i>Created at {{ entry.created_at }}, last modified {{ entry.last_edited_at }}</i>
+
+{% endblock %}

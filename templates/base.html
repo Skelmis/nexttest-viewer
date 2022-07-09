@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Discord metadata -->
+    <meta property="og:title" content="NextTest">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexttest.koldfusion.xyz/">
+{#    <meta property="og:description" content="View tests, simply!">#}
+
+</head>
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>

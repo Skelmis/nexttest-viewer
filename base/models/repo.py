@@ -13,5 +13,5 @@ class Repo(models.Model):
 
         super().save(*args, **kwargs)
 
-    def __repr__(self):
-        return f"Repo(slug={self.slug})"
+    def __str__(self):
+        return f"Repo(slug='{self.slug}')"
