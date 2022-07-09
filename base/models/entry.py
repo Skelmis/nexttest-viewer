@@ -12,7 +12,9 @@ class Entry(models.Model):
     description = models.CharField(
         help_text="A description to display on the page", blank=True, max_length=200
     )
-    log_file = models.FileField(upload_to="base/", help_text="The pytest HTML log file")
+    log_file = models.FileField(
+        upload_to="nexttest/base/", help_text="The pytest HTML log file"
+    )
     test_file = models.URLField(help_text="A link to the actual test cases.")
     created_at = models.DateTimeField(auto_now_add=True)
     last_edited_at = models.DateTimeField(auto_now=True)
