@@ -8,8 +8,8 @@ Available routes:
 <ul>
     {% for route in all_routes %}
         <li>
-        <a href="{{ route }}">
-            {{ route }}
+        <a href="{{ route.0 }}">
+            {{ route.0 }} {% if route.1 %}- {{ route.1 }}{% endif %}
         </a>
         </li>
     {% endfor %}

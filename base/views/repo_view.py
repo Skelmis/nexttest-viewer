@@ -15,7 +15,7 @@ def repo_view(request: HttpRequest, repo_slug: str):
         for entry in all_entries:
             redirect_url = request.get_full_path() + "/" + entry.slug
             if check_safe_redirect(request, redirect_url):
-                raw_entries.append(redirect_url)
+                raw_entries.append([redirect_url, entry.description])
 
         context["all_routes"] = raw_entries
     except Repo.DoesNotExist:

@@ -9,8 +9,8 @@ from base.models import Repo
 class Entry(models.Model):
     repo = models.ForeignKey(Repo, on_delete=models.CASCADE)
     slug = models.SlugField()
-    description = models.TextField(
-        help_text="A description to display on the page", blank=True
+    description = models.CharField(
+        help_text="A description to display on the page", blank=True, max_length=200
     )
     log_file = models.FileField(upload_to="base/", help_text="The pytest HTML log file")
     test_file = models.URLField(help_text="A link to the actual test cases.")
